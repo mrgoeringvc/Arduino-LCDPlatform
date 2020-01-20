@@ -68,7 +68,7 @@ void loop()   /*----( LOOP: RUNS CONSTANTLY )----*/
   
 
   lcd.setCursor(0,0); // top line
-  lcd.print("My Basic LCD Loop");
+  lcd.print("Basic LCD Loop");
   delay(100);
 
   }/* --(end main loop )-- */
