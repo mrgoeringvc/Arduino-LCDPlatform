@@ -57,18 +57,16 @@ void setup()   /*----( SETUP: RUNS ONCE )----*/
   lcd.print("Basic Program");
   delay(2000);  
 
-// Wait and then tell user they can start the Serial Monitor and type in characters to
-// Display. (Set Serial Monitor option to "No Line Ending")
+// Wait and then tell user that the loop has started.
+// Use the Serial Monitor to help develop LCD strings. 
   lcd.clear();
 }/*--(end setup )---*/
 
 
 void loop()   /*----( LOOP: RUNS CONSTANTLY )----*/
 {
-  
-
   lcd.setCursor(0,0); // top line
   lcd.print("Basic LCD Loop");
   delay(100);
 
-  }/* --(end main loop )-- */
+}/* --(end main loop )-- */
