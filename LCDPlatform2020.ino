@@ -1,10 +1,11 @@
 /* LCDPlatform2020
- * Using the 16 character 2 line I2C Display  typically labled 
+ * For students to learn to the LCD displan and I2C using
+ * the 16 character 2 line I2C Display typically labled 
  * "YwRobot Arduino LCM1602 IIC V1" or  
  * SainSmart LCD2004. Note: Of these LCDs 
  * most used address 0x27, a FEW use 0x3F.
  * 
- * LastMod:1/15/20, Publish, m comm
+ * LastMod:1/25/20, Publish, mg Ver1
  * ORIGIONAL LCD Code YourDuino.com, terry@yourduino.com 
 */
 
@@ -38,6 +39,7 @@ void setup()   /*----( SETUP: RUNS ONCE )----*/
                      // then turn on backlight
 
 // ------- Quick 2 blinks to show we are alive  -------------
+  //Some new displays may need adjusting before the characters can be read
   for(int i = 0; i< 2; i++)
   {
     lcd.backlight();
@@ -47,26 +49,24 @@ void setup()   /*----( SETUP: RUNS ONCE )----*/
   }
   lcd.backlight(); // finish with backlight on  
 
+
 //-------- Write characters on the display ------------------
 // NOTE: Cursor Position: (CHAR, LINE) start at 0  
   lcd.setCursor(0,0); //Start at character 0 on line 0
-  lcd.print("My Basic LCD Loop");
+  lcd.print(splashMsg);  // Let the user know the program name
   delay(100);
   lcd.setCursor(0,1); //for line 2
   // Text 16"XXXXxxxxXXXXxxxx" charactors long.
   lcd.print("Basic Program");
-  delay(2000);  
-
+  delay(2000);  // give them time to read the splashscreen msg
 // Wait and then tell user that the loop has started.
-// Use the Serial Monitor to help develop LCD strings. 
   lcd.clear();
-}/*--(end setup )---*/
+}/*--(end setup)---*/
 
-
-void loop()   /*----( LOOP: RUNS CONSTANTLY )----*/
+void loop()   //----------( LOOP: RUNS CONSTANTLY )----------
 {
   lcd.setCursor(0,0); // top line
   lcd.print("Basic LCD Loop");
   delay(100);
 
-}/* --(end main loop )-- */
+}// --(end loop)-- 
